@@ -1,10 +1,13 @@
 import { CardContainer } from '../components/CardContainer';
-import {Container} from './style';
+import { Container } from './style';
+import { Theme } from '../styles/GlobalStyles';
 
 function App() {
   return (
     <Container>
-      <CardContainer/>
+      <Theme>
+        <CardContainer />
+      </Theme>
     </Container>
   )
 }

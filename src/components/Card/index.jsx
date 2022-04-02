@@ -1,5 +1,9 @@
-export const Card = () => {
-    return (
-        <h1>Hello</h1>
-    )
+import { Container } from "./style";
+
+export const Card = ({ info }) => {
+  return (
+    <Container>
+      <img src={info.sprites.front_default} alt="" />
+    </Container>
+  );
 };
