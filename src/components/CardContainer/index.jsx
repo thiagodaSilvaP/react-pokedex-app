@@ -8,7 +8,7 @@ export const CardContainer = () => {
     const url = "https://pokeapi.co/api/v2/pokemon/";
     const pokemonsPromises = [];
 
-    for (let index = 1; index <= 10; index++) {
+    for (let index = 1; index <= 1; index++) {
       pokemonsPromises.push(
         fetch(url + index)
           .then((response) => response.json())

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 80%;
+  width: 90%;
   height: 600px;
   padding: 20px;
   display: grid;
@@ -9,17 +9,18 @@ export const Container = styled.div`
   grid-auto-rows: 250px;
   gap: 20px 40px;
   flex-wrap: wrap;
-  background-color: #aaa;
+  background-color: ${props => props.theme.colors.bg_default};
   overflow-y: scroll;
 
   &::-webkit-scrollbar {
     width: 5px;
   }
   &::-webkit-scrollbar-track {
-    background: #aaa;
+    background: ${props => props.theme.colors.bg_default_dark};
   }
   &::-webkit-scrollbar-thumb {
-    background: #f1f1f1;
+    background: ${props => props.theme.colors.bg_light};
+    height: 50px;
     border-radius: 10px;
   }
   &::-webkit-scrollbar-thumb:hover {

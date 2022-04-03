@@ -16,7 +16,9 @@ export const GlobalStyles = createGlobalStyle`
 export const Theme = ({children}) => {
     const theme = {
         colors: {
+            bg_light: '#fff',
             bg_default: '#eee',
+            bg_default_dark: '#ddd'
         }
     }
     return (
