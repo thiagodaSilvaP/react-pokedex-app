@@ -1,11 +1,26 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-export const Container = styled.div`
-    position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #FFF;
+export const Overlay = styled.div`
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
   padding: 50px;
   z-index: 1000;
-`
+  background-color: #00000020;
+`;
+
+export const ModalContainer = styled.div`
+  width: 80%;
+  height: 80%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: ${props => props.theme.colors.bg_light};
+`;

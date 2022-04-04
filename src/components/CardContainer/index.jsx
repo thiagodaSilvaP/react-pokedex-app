@@ -6,18 +6,25 @@ import { Modal } from "../Modal";
 
 export const CardContainer = () => {
   const pokemons = useContext(PokemonContext);
-  const [isModal, setIsModal] = useState(false);
-  const handleIsModal = () => setIsModal(prev => !prev)
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [currentInfosPokemon, setCurrentInfosPokemon] = useState({});
+
+  const handleOpenModal = (pokemon) => {
+    setCurrentInfosPokemon(pokemon)
+    setModalIsOpen((prev) => !prev)
+  };
+  const handleCloseModal = () => setModalIsOpen(false)
+
   return (
     <Container>
       {pokemons.map((pokemon) => {
         return (
           <div key={pokemon.id}>
-            <Card  info={pokemon} handleIsModal={handleIsModal}/>
-            <Modal info={pokemon} isModal={isModal}/>
+            <Card info={pokemon} handleOpenModal={() => handleOpenModal(pokemon)} />
           </div>
         );
       })}
+      <Modal info={currentInfosPokemon} handleCloseModal={handleCloseModal} modalIsOpen={modalIsOpen} />
     </Container>
   );
 };

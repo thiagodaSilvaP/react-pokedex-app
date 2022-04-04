@@ -7,9 +7,10 @@ import {
   TypesContainer,
 } from "./style";
 
-export const Card = ({ info, handleIsModal }) => {
+export const Card = ({ info, handleOpenModal }) => {
+  console.log(info);
   return (
-    <Container onClick={handleIsModal}>
+    <Container onClick={handleOpenModal}>
       <ImagePokemon src={info.sprites.front_default} alt="pokemon" />
       <InfoContainer>
         <h1 className="id-pokemon">
