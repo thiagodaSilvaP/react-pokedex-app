@@ -19,7 +19,7 @@ export const Theme = ({children}) => {
             bg_light: '#fff',
             bg_default: '#eee',
             bg_default_dark: '#ddd'
-        }
+        },
     }
     return (
         <ThemeProvider theme={theme}>

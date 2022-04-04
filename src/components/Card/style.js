@@ -27,10 +27,39 @@ export const InfoContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: start;
   flex-direction: column;
+
+  .id-pokemon {
+    font-size: medium;
+    font-weight: normal;
+    margin-bottom: 10px;
+  }
+  .name-pokemon {
+    font-weight: bolder;
+    font-size: x-large;
+    margin-bottom: 5px;
+  }
 `;
 
 export const TypesContainer = styled.div`
-  
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  div {
+    flex: 1;
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 6px;
+    color: ${props => props.theme.colors.bg_light};
+  }
+
+  .first-type {
+    margin-right: 10px;
+  }
 `

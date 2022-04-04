@@ -1,3 +1,5 @@
+import { UseTypeTheme } from "../../hooks/UseTypeTheme";
+
 import {
   Container,
   ImagePokemon,
@@ -6,22 +8,43 @@ import {
 } from "./style";
 
 export const Card = ({ info }) => {
-  console.log(info.types[0].type);
+  console.log(UseTypeTheme(info.types[0].type.name));
   return (
     <Container>
       <ImagePokemon src={info.sprites.front_default} alt="pokemon" />
       <InfoContainer>
-        <h1>{info.id}</h1>
-        <h3>{info.name}</h3>
+        <h1 className="id-pokemon">
+          Nº{info.id < 10 ? `00${info.id}` : info.id}
+        </h1>
+        <h3 className="name-pokemon">{info.name}</h3>
         <TypesContainer>
           {info.types.length > 1 ? (
             <>
-              <h2>{info.types[0].type.name}</h2>
-              <h2>{info.types[1].type.name}</h2>
+              <div
+                className="first-type"
+                style={{
+                  backgroundColor: UseTypeTheme(info.types[0].type.name),
+                }}
+              >
+                {info.types[0].type.name}
+              </div>
+              <div
+                style={{
+                  backgroundColor: UseTypeTheme(info.types[1].type.name),
+                }}
+              >
+                {info.types[1].type.name}
+              </div>
             </>
           ) : (
             <>
-              <h2>{info.types[0].type.name}</h2>
+              <div
+                style={{
+                  backgroundColor: UseTypeTheme(info.types[0].type.name),
+                }}
+              >
+                {info.types[0].type.name}
+              </div>
             </>
           )}
         </TypesContainer>
