@@ -7,10 +7,9 @@ import {
   TypesContainer,
 } from "./style";
 
-export const Card = ({ info }) => {
-  console.log(UseTypeTheme(info.types[0].type.name));
+export const Card = ({ info, handleIsModal }) => {
   return (
-    <Container>
+    <Container onClick={handleIsModal}>
       <ImagePokemon src={info.sprites.front_default} alt="pokemon" />
       <InfoContainer>
         <h1 className="id-pokemon">

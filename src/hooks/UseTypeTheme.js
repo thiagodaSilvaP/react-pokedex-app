@@ -20,6 +20,5 @@ const typesColors = {
 }
 
 export const UseTypeTheme = (type) => {
-    console.log(type)
     return typesColors[type]
 }
